@@ -1,6 +1,16 @@
+
+
+pp "Where are you located?"
+user_location=gets.chomp
+pp user_location
+
+maps_url="https://maps.googleapis.com/maps/api/geocode/json?address=Merchandise%20Mart%20Chicago&key="+ ENV.fetch("GMAPS_KEY")
+
+p maps_url
+
+=begin
 # I've already created a string variable above: pirate_weather_api_key
 # It contains sensitive credentials that hackers would love to steal so it is hidden for security reasons.
-
 require "http"
 
 pirate_weather_api_key=ENV.fetch("PIRATE_WEATHER_KEY")
@@ -20,3 +30,4 @@ currently_hash = parsed_response.fetch("currently")
 current_temp = currently_hash.fetch("temperature")
 
 puts "The current temperature is " + current_temp.to_s + "."
+=end
